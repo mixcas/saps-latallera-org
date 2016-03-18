@@ -25,6 +25,24 @@ if( have_posts() ) {
         <?php the_content(); ?>
       </div>
 
+        <footer>
+      <?php
+      $saps_cat = get_category_by_slug('saps');
+      $tallera_cat = get_category_by_slug('la-tallera');
+
+      $cat = get_the_category();
+      $cat = $cat[0];
+
+      if ( cat_is_ancestor_of($saps_cat, $cat) ) {
+        $section = "Sala de Arte Público Siqueiros";
+        $visit_link = get_permalink( get_page_by_path('visitanos-saps') );
+      } else if ( cat_is_ancestor_of($tallera_cat, $cat) ) {
+        $section = "La Tallera";
+        $visit_link = geT_permalink( get_page_by_path('visitanos-la-tallera') );
+      }
+      ?>
+        <p><?php echo $section; ?>: <a href="<?php echo $visit_link; ?>">Cómo llegar</a> | <a href="<?php echo $visit_link; ?>">Horarios</a></p>
+        </footer>
       </article>
 
 <?php

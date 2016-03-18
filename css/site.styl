@@ -76,6 +76,7 @@ $font-tracking-basic = 0.001em
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white-soft = rgb(253, 253, 253)
+$color-red = rgb(191, 37, 47)
 
 // TYPOGRAPHY
 
@@ -127,9 +128,19 @@ a, a:active, a:visited
   color:inherit
   transition:opacity .2s
   text-decoration: none
-  &:hover
-    opacity:.5
 
+  &:hover
+    color: $color-red
+
+// qtranslate x
+.language-chooser 
+  a
+    color: $color-red
+    opacity: 0.5
+
+  .active
+    a
+      opacity: 1
 
 // BASIC
 
@@ -163,8 +174,16 @@ img
 .menu-item.menu-item-has-children > a
   font-weight: bold
 
+// MAIN SIDEBAR
+.main-sidebar
+  list-style: none
+  
+  & > li
+    margin-bottom: $margin-basic
 // COPY
 .copy
+  line-height: 1.8
+
   img
     display: block
     margin: 0 auto
