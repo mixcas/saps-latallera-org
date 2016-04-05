@@ -14,6 +14,12 @@ get_header();
 if( have_posts() ) {
   while( have_posts() ) {
     the_post();
+    $artists = get_the_terms( $post->ID, 'artist');
+    if( !empty( $artists ) ) {
+      $artists = array_map( function($e) {
+        return $e->name;
+      }, $artists);
+    }
 ?>
 
       <article <?php post_class(); ?> id="post-<?php the_id(); ?>">
@@ -22,6 +28,9 @@ if( have_posts() ) {
 
       <div class="copy">
         <?php the_post_thumbnail() ?>
+    <?php if ( !empty($artists) ) { ?>
+        <p class="artists"><?php echo implode(", ", $artists) . '.'; ?> </p>
+    <?php } ?>
         <?php the_content(); ?>
       </div>
 

@@ -8,7 +8,7 @@ get_header();
   <div class="row">
 
   <!-- main posts loop -->
-    <section id="posts" class="col s18">
+    <section id="posts" class="grid col s18">
       <div class="row">
 
 <?php
@@ -16,12 +16,24 @@ if( have_posts() ) {
   $index = 1;
   while( have_posts() ) {
     the_post();
+    $artists = get_the_terms( $post->ID, 'artist');
 ?>
 
       <article <?php post_class('col s6'); ?> id="post-<?php the_id(); ?>">
 
         <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('grid-thumb'); ?></a>
-        <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+        <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+    <?php if ( !empty($artists) ) { ?>
+        <p class="artists">
+      <?php
+      if( count($artists) > 1 ) {
+        echo __('[:es]Varios Artistas[:en]Various Artists[:]');
+      } else {
+        echo $artists[0]->name;
+      }
+      ?>
+        </p>
+    <?php } ?>
 
       </article>
     <?php
