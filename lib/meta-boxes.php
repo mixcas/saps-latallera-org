@@ -39,5 +39,27 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  $metaboxes = new_cmb2_box( array(
+    'id'            => $prefix . 'metabox',
+    'title'         => __( 'Meta', 'cmb2' ),
+    'object_types'  => array( 'post', ), // Post type
+    // 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
+    // 'context'    => 'normal',
+    // 'priority'   => 'high',
+    // 'show_names' => true, // Show field names on the left
+    // 'cmb_styles' => false, // false to disable the CMB stylesheet
+    // 'closed'     => true, // true to keep the metabox closed by default
+  ) );
+
+  $metaboxes->add_field( array(
+    'name' => __( 'Artistas', 'cmb2' ),
+    'desc' => __( '', 'cmb2' ),
+    'id'   => $prefix . 'artists',
+    'type' => 'text',
+    // 'repeatable' => true,
+  ) );
+
+
+
 }
 ?>
