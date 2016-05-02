@@ -55,8 +55,13 @@
   <section id="main-container" class="container">
 
   <!-- start content -->
-  <header id="header">
-    <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/logo.jpg"></a>
-  <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+  <header id="header" class="row">
+    <div class="col s7"><a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/logo.png"></a></div>
+    <div class="col s2"></div>
+  <?php wp_nav_menu( array(
+    'theme_location' => 'header-menu',
+    'container' => 'div',
+    'container_class' => 'col s15',
+  ) ); ?>
 
   </header>
