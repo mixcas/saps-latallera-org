@@ -103,6 +103,7 @@ class IGV_Admin {
 
 		// Set our CMB2 fields
 
+    /*
 		$cmb->add_field( array(
 			'name' => __( 'Test Text', 'IGV' ),
 			'desc' => __( 'field description (optional)', 'IGV' ),
@@ -117,6 +118,14 @@ class IGV_Admin {
 			'id'      => $this->prefix . 'test_colorpicker',
 			'type'    => 'colorpicker',
 			'default' => '#bada55',
+		) );
+     */
+
+		$cmb->add_field( array(
+			'name' => __( 'Footer', 'IGV' ),
+			'desc' => __( 'Texto del footer', 'IGV' ),
+			'id'   => $this->prefix . 'footer_content',
+			'type' => 'wysiwyg',
 		) );
 
 	}
