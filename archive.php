@@ -16,7 +16,7 @@ if( have_posts() ) {
   $index = 1;
   while( have_posts() ) {
     the_post();
-    $artists = get_the_terms( $post->ID, 'artist');
+    $artists = get_artist($post->ID, '_igv_artists');
 ?>
 
       <article <?php post_class('col s6'); ?> id="post-<?php the_id(); ?>">
@@ -25,13 +25,7 @@ if( have_posts() ) {
         <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
     <?php if ( !empty($artists) ) { ?>
         <p class="artists">
-      <?php
-      if( count($artists) > 1 ) {
-        echo __('[:es]Varios Artistas[:en]Various Artists[:]');
-      } else {
-        echo $artists[0]->name;
-      }
-      ?>
+      <?php echo $artists; ?>
         </p>
     <?php } ?>
 

@@ -100,6 +100,31 @@ add_action( 'login_head', 'custom_login_logo' );
 
 // UTILITY FUNCTIONS
 
+// Get post artist
+function get_artist($post_id) {
+
+  // Look for metabox Artists
+  $artist = get_post_meta($post_id, '_igv_artists');
+
+  // If no info inthe Artist metabox look for artist taxonomy
+  if ( empty( $artist ) ) {
+
+    // Get Artist taxonomy
+    $artist = get_the_terms( $post_id, 'artist');
+    if ( !empty($artist) ) {
+
+      // If more than one artist return: Various Artists
+      if( count($artist) > 1 ) {
+        $artist = __('[:es]Varios Artistas[:en]Various artists[:]');
+      } else {
+        return $artist[0]->name;
+      }
+    }
+  } else {
+    return $artist[0];
+  }
+}
+
 // to replace file_get_contents
 function url_get_contents($Url) {
   if (!function_exists('curl_init')){
