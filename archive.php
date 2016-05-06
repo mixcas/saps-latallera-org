@@ -5,10 +5,10 @@ get_header();
 <!-- main content -->
 
 <main id="main-content">
-  <div class="row">
 
   <!-- main posts loop -->
-    <section id="posts" class="grid col s18">
+    <section id="posts" class="grid">
+
       <div class="row">
 
 <?php
@@ -37,7 +37,7 @@ if( have_posts() ) {
 
       </article>
     <?php
-    if( $index % 3 == 0 ) {
+    if( $index % 4 == 0 ) {
       echo '</div><div class="row">';
     }
 
@@ -57,10 +57,6 @@ if( have_posts() ) {
   <?php get_template_part('partials/pagination'); ?>
     </section>
 
-    <div class="col s6">
-    <?php get_template_part('partials/main-sidebar'); ?>
-    </div>
-  </div>
 
 <!-- end main-content -->
 

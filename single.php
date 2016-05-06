@@ -5,10 +5,9 @@ get_header();
 <!-- main content -->
 
 <main id="main-content">
-  <div class="row">
 
   <!-- main posts loop -->
-    <section id="posts" class="col s18">
+    <section id="posts">
 
 <?php
 if( have_posts() ) {
@@ -59,11 +58,6 @@ if( have_posts() ) {
   <!-- end posts -->
   <?php get_template_part('partials/pagination'); ?>
     </section>
-
-    <div class="col s6">
-    <?php get_template_part('partials/main-sidebar'); ?>
-    </div>
-  </div>
 
 <!-- end main-content -->
 

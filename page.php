@@ -8,7 +8,7 @@ get_header();
   <div class="row">
 
   <!-- main posts loop -->
-    <section id="posts" class="col s18">
+    <section id="posts" class="col s24">
 
 <?php
 if( have_posts() ) {
@@ -38,9 +38,6 @@ if( have_posts() ) {
   <?php get_template_part('partials/pagination'); ?>
     </section>
 
-    <div class="col s6">
-    <?php get_template_part('partials/main-sidebar'); ?>
-    </div>
   </div>
 
 <!-- end main-content -->
