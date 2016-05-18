@@ -17,6 +17,8 @@ $gutter = 14px
 .row
   clear: both
   display: flex
+  flex-direction: row
+  flex-wrap: wrap
 .col
   margin-left: ($gutter/2)
   margin-right: ($gutter/2)
@@ -141,6 +143,7 @@ html
 
 img
   max-width: 100%
+  width: auto
   height: auto
 
 // STRUCTURE
@@ -193,6 +196,21 @@ img
   .grid
     h3
       font-size: 1.3em
+
+
+    .current-mark
+      color: $color-red
+      display: block
+      font-size: $font-size-basic * 1.2
+      font-weight: bold
+
+.current-exhibition
+  background: rgba(0,0,0,0.05)
+  padding-top: ( 1 * $col ) + ( ( 1 - 1 ) * $gutter )
+  padding-bottom: ( 1 * $col ) + ( ( 1 - 1 ) * $gutter )
+
+  h3
+    font-size: 1.9em
 
 // FOOTER
 #footer
