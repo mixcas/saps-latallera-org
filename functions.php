@@ -30,6 +30,7 @@ if( function_exists( 'add_image_size' ) ) {
 
   add_image_size( 'name', 199, 299, true );
   add_image_size( 'grid-thumb', 262, 170, array('center', 'center') );
+  add_image_size( 'grid-current-thumb', 538, 349, array('center', 'center') );
   add_image_size( 'large', 814, 9999, false );
 }
 
