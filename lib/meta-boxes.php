@@ -62,7 +62,7 @@ function igv_cmb_metaboxes() {
 
   $metaboxes->add_field( array(
     'name' => __( 'Actual', 'cmb2' ),
-    'desc' => __( 'Marca este campo es esta es la Exhibicion Actual', 'cmb2' ),
+    'desc' => __( 'Marca este campo si esta es la Exhibicion Actual', 'cmb2' ),
     'id'   => $prefix . 'current',
     'type' => 'checkbox',
   ) );
